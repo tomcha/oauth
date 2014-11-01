@@ -39,10 +39,8 @@ class MainApp < Sinatra::Base
   set :public_folder, File.expand_path(File.join(root, '..', 'public'))
 
   get '/' do
-#    puts request.object_id
     @@screen_name = 'Sign in Twitter'
     @signin_link = '/auth/twitter'
-#    @profile_image_icon = './signin_icon.jpg'
     haml :index
   end
 
@@ -51,7 +49,6 @@ class MainApp < Sinatra::Base
     session[:screen_name] = @auth['info'].nickname
     session[:profile_image_icon] = @auth['info'].image
     @signin_link = '#'
-    p @profile_image_icon
     session[:uid] = @auth['uid']
     @uid = session[:uid]
     if !(OauthUser.find_by(twitter_id: @uid))
