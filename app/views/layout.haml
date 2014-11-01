@@ -2,7 +2,61 @@
 %html{lang: 'ja'}
   %head
     %meta{charset: 'utf8'}
+    %link{:href=>"//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/cosmo/bootstrap.min.css", :rel=>"stylesheet"}
     %title
       twitter oauth
     %body
+      %div.container
+        %div{class: 'page-header', id: 'banner'}
+          %div.row
+            %div{class: 'col-lg-8 col-md-7 col-sm-6'}
+      %div{class: 'navbar navbar-default navbar-fixed-top'}
+        %div.container
+          %div.navbar-header
+            %a.navbar-brand
+              Twitter Oauth
+            %button{class: 'navbar-toggle', type: 'button', 'data-togle' => 'collapse', 'data-target' => '#navbar-min'}
+              %span{class: 'icon-bar'}
+              %span{class: 'icon-bar'}
+              %span{class: 'icon-bar'}
+          %div{class: 'navbar-collapse collapse', id: 'navbar-main'}
+            %ul{class: 'nav navbar-nav'}
+              %li.dropdown
+                %a{class: 'dropdown-toggle', 'data-toggle' => 'dropdown', href: '#', id: 'menu'}
+                  menu
+                  %span.caret
+                %ul{class: 'dropdown-menu','aria-labelledby' => 'themes'}
+                  %li
+                    %a{href: '#'}
+                      menu1
+                  %li.divider
+                  %li
+                    %a{href: '#'}
+                      menu2
+                  %li
+                    %a{href: '#'}
+                      menu3
+              %li
+                %a{href: '#'}
+                  blog
+              %li
+                %a{href: '#'}
+                  help
+            %ul{class: 'nav navbar-nav navbar-right'}
+              %li.dropdown
+                - if @profile_image_icon
+                  %a{href: '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown'}
+                    =@screen_name
+                    %span.caret
+                    %img{src: @profile_image_icon, class: 'user-avatar', width: '32', height: '32' }
+                  %ul{class: 'dropdown-menu', 'aria-labelleby' => 'themes'}
+                    %li
+                      %a{href: '/signout'}
+                        Sign out
+                - else
+                  %a{href:'/auth/twitter'}
+                    Sign in Twitter
+
       =yield
+      %script{src: 'https://code.jquery.com/jquery-1.10.2.min.js'}
+      %script{src: './bootstrap.min.js'}
