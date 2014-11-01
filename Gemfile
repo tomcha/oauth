@@ -2,11 +2,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
-
-#framework
 gem 'sinatra'
-
-#テンプレート
 gem 'haml'
 
 #oauth認証

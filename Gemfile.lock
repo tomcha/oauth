@@ -18,6 +18,7 @@ GEM
     builder (3.2.2)
     haml (4.0.5)
       tilt
+<<<<<<< HEAD
     hashie (3.3.1)
     i18n (0.6.11)
     json (1.8.1)
@@ -33,6 +34,8 @@ GEM
     omniauth-twitter (1.0.1)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
+=======
+>>>>>>> 06900909dd72bf825cb3440f6ac3a53b281f9401
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -52,7 +55,10 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   haml
+<<<<<<< HEAD
   omniauth
   omniauth-twitter
+=======
+>>>>>>> 06900909dd72bf825cb3440f6ac3a53b281f9401
   sinatra
   sqlite3

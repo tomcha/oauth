@@ -35,6 +35,9 @@ class MainApp < Sinatra::Base
     )
   end
 
+class MainApp < Sinatra::Base
+  set :public_folder, File.expand_path(File.join(root, '..', 'public'))
+
   get '/' do
 #    puts request.object_id
     @@screen_name = 'Sign in Twitter'
